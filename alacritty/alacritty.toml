@@ -1,0 +1,40 @@
+live_config_reload = true
+
+# themes from https://github.com/alacritty/alacritty-theme
+import = ["/Users/yu/.config/alacritty/themes/catppuccin-macchiato.toml"]
+# import = ["/Users/yu/.config/alacritty/themes/tokyo-night.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 25
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+
+[window]
+dynamic_title = true
+startup_mode = "Maximized"
+decorations = "none"
+padding = { x = 7, y = 0 }
+# opacity = 0.9
+# [window.padding]
+# x = 7
+# y = 0
+
+# interesting list from https://github.com/alacritty/alacritty/issues/6592#issuecomment-1746048505
+# 36 is a key code for "Enter" or "Return"
+# multiple mods are supported with | separator
+[keyboard]
+bindings = [
+    { key =  36, mods = "Command", action = "CreateNewWindow" },
+    { action = "Copy", key = "C", mods = "Control|Shift" },
+    { action = "Paste", key = "V", mods = "Control|Shift" },
+]
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true
