@@ -178,6 +178,8 @@ nnoremap("<leader>di", function()
   })
 end)
 
+nnoremap("<leader>tdi", ":ToggleDiagnostics<cr>", { desc = "ToggleDiagnostics" })
+nnoremap("<leader>tel", ":ToggleESLint<cr>", { desc = "ToggleESLint" })
 -- Place all dignostics into a qflist
 nnoremap("<leader>ld", vim.diagnostic.setqflist, { desc = "Quickfix [L]ist [D]iagnostics" })
 
@@ -419,7 +421,8 @@ xnoremap("<leader>p", '"_dP')
 -- Move selected text up/down in visual mode
 vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
 vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
-
+vnoremap("<M-j>", ":m '>+1<CR>gv=gv")
+vnoremap("<M-k>", ":m '<-2<CR>gv=gv")
 -- Reselect the last visual selection
 xnoremap("<<", function()
   vim.cmd("normal! <<")

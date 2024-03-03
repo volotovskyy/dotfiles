@@ -1,11 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
 - /Users/yu/.config
-- /Users/yu/Desktop/Timezynk/tzcontrol
 - /Users/yu/Desktop/Timezynk/client-tzmobile
+- /Users/yu/Desktop/Timezynk/tzcontrol
 - /Users/yu/Desktop/pet-sessions/startpage
 startuppopupversion: 5
 customcommandshistory:
+- q
 - a
 - p
 - c -

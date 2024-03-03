@@ -1,4 +1,5 @@
 live_config_reload = true
+# alt_send_esc = false
 
 # themes from https://github.com/alacritty/alacritty-theme
 import = ["/Users/yu/.config/alacritty/themes/catppuccin-macchiato.toml"]
@@ -31,6 +32,10 @@ bindings = [
     { key =  36, mods = "Command", action = "CreateNewWindow" },
     { action = "Copy", key = "C", mods = "Control|Shift" },
     { action = "Paste", key = "V", mods = "Control|Shift" },
+    # { key = "F", mods = "Alt", chars = "ƒ" },
+    # { key = "B", mods = "Alt", chars = "ß" },
+    # { key = "H", mods = "Alt", chars = "˙" }, 
+    # { key = "L", mods = "Alt", chars = "¬" },
 ]
 
 [selection]
