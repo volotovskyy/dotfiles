@@ -1,15 +1,15 @@
 lastupdatecheck: 0
 recentrepos:
 - /Users/yu/.config
-- /Users/yu/Desktop/Timezynk/client-tzmobile
 - /Users/yu/Desktop/Timezynk/tzcontrol
-- /Users/yu/Desktop/pet-sessions/startpage
+- /Users/yu/Desktop/Timezynk/client-tzmobile
 startuppopupversion: 5
 customcommandshistory:
-- q
-- a
-- p
-- c -
 - c master
+- c -
+- p
+- a
+- q
+- qa!
 hidecommandlog: false
 ignorewhitespaceindiffview: false

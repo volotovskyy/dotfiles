@@ -298,6 +298,7 @@ nnoremap("<leader>5", function()
 end)
 
 -- Git keymaps --
+nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>")
 nnoremap("<leader>gb", ":Gitsigns toggle_current_line_blame<cr>")
 nnoremap("<leader>gf", function()
   local cmd = {
