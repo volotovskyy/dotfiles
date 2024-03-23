@@ -14,6 +14,7 @@ return {
 						scope_color = "sapphire",
 						colored_indent_levels = false,
 					},
+					rainbow_delimiters = true,
 					mason = true,
 					native_lsp = { enabled = true },
 					notify = true,

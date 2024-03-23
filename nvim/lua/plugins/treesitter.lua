@@ -14,18 +14,19 @@ return {
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"bash",
-					"c",
+					-- "c",
 					"css",
-					"gleam",
-					"graphql",
+					-- "gleam",
+					-- "graphql",
 					"html",
 					"javascript",
 					"json",
 					"lua",
 					"markdown",
-					"ocaml",
-					"ocaml_interface",
-					"prisma",
+					"markdown_inline",
+					-- "ocaml",
+					-- "ocaml_interface",
+					-- "prisma",
 					"tsx",
 					"typescript",
 					"vim",
@@ -34,10 +35,11 @@ return {
 				sync_install = false,
 				highlight = {
 					enable = true,
+					-- additional_vim_regex_highlighting = true,
 				},
 				indent = {
 					enable = true,
-					disable = { "ocaml", "ocaml_interface" },
+					-- disable = { "ocaml", "ocaml_interface" },
 				},
 				autopairs = {
 					enable = true,

@@ -7,6 +7,7 @@ return {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         "debugloop/telescope-undo.nvim",
+        "ThePrimeagen/git-worktree.nvim",
         build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
         cond = vim.fn.executable("cmake") == 1,
@@ -32,15 +33,18 @@ return {
             ".sl",
             "_build",
             ".next",
+            ".DS_Store"
           },
           hidden = true,
         },
       })
 
-      -- Enable telescope fzf native, if installed
+      -- Enable telescope fzf native if installed
       pcall(require("telescope").load_extension, "fzf")
-      -- Enable undo
+      -- Enable undo if installed
       pcall(require("telescope").load_extension, "undo")
+      -- Enable git worktree if installed
+      pcall(require("telescope").load_extension, "git_worktree")
     end,
   },
 }

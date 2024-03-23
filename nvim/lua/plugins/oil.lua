@@ -33,6 +33,18 @@ return {
         },
         view_options = {
           show_hidden = true,
+          -- show_hidden = false,
+          -- is_hidden_file = function(name, _)
+          --   if name == ".DS_Store" then
+          --     return true
+          --   end
+          -- end,
+          is_always_hidden = function(name, _)
+            if name == ".DS_Store" then
+              return true
+            end
+            return false
+          end
         },
         win_options = {
           signcolumn = "yes:2",
