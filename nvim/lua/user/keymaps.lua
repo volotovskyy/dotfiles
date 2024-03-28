@@ -8,7 +8,7 @@ local xnoremap = require("user.keymap_utils").xnoremap
 -- local harpoon_ui = require("harpoon")
 -- local harppon_mark = require('harpoon').get_mark_config().marks
 local harpoon = require("harpoon")
-
+local neogit = require("neogit")
 -- REQUIRED
 harpoon:setup()
 -- REQUIRED
@@ -261,7 +261,7 @@ nnoremap("<leader>tc", ":TSC<cr>", { desc = "[T]ypeScript [C]ompile" })
 
 -- Harpoon keybinds --
 -- Open harpoon ui
-nnoremap("<leader>ho", function()
+nnoremap("<leader>hl", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
@@ -304,14 +304,14 @@ end)
 -- Git keymaps --
 nnoremap("<leader>gh", ":Gitsigns preview_hunk<CR>", { desc = "Preview hunk" })
 nnoremap("<leader>gbl", ":Gitsigns toggle_current_line_blame<cr>")
-nnoremap("<leader>gs", ":G<CR>")
-nnoremap("<leader>gd", ":Gdiff<CR>")
-nnoremap("<leader>gp", ":Git pull")
-nnoremap("<leader>gP", ":Git push")
--- nnoremap("<leader>gcb", ":Git checkout -b <Space><CR>")
--- nnoremap("<leader>gco", ":Git checkout <Space><CR>")
-nnoremap("<leader>gcm", ":Git checkout master<CR>")
-nnoremap("<leader>gc'", ":Git checkout -<CR>")
+nnoremap("<leader>gb", ":Telescope git_branches<CR>", { silent = true })
+
+-- nnoremap("<leader>gs", ":G<CR>")
+nnoremap("<leader>gs", neogit.open, { silent = true })
+-- nnoremap("<leader>gd", ":Gdiff<CR>")
+nnoremap("<leader>gB", ":G blame<CR>", { silent = true })
+-- nnoremap("<leader>gp", ":Git pull")
+-- nnoremap("<leader>gP", ":Git push")
 -- nnoremap("<leader>gcm", ":Git commit -m<CR>")
 nnoremap("<leader>gaa", ":Git add .<CR>")
 nnoremap("<leader>gf", function()
@@ -333,8 +333,16 @@ nnoremap("<leader>gf", function()
 		require("telescope.builtin").git_files()
 	end
 end, { desc = "Search [G]it [F]iles" })
-nnoremap("<leader>lg", ":LazyGit<cr>")
-nnoremap("<leader>lgf", ":LazyGitFilter<cr>")
+
+nnoremap("<leader>gg", ":Neogit<cr>")
+nnoremap("<leader>gl", ":Neogit log<cr>")
+nnoremap("<leader>gc", ":Neogit commit<CR>", { silent = true })
+nnoremap("<leader>gp", ":Neogit pull<CR>")
+nnoremap("<leader>gP", ":Neogit push<CR>")
+-- nnoremap("<leader>gb", ":Neogit branch<cr>")
+-- nnoremap("<leader>ngb", neogit.open({ "branch" }))
+-- nnoremap("<leader>gd", ":DiffviewOpen<cr>")
+-- nnoremap("<leader>gdm", ":DiffviewOpen master<cr>")
 -- Telescope keybinds --
 nnoremap("<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 nnoremap("<leader>sb", require("telescope.builtin").buffers, { desc = "[S]earch Open [B]uffers" })
@@ -432,7 +440,7 @@ vnoremap("H", "^")
 
 -- Paste without losing the contents of the register
 xnoremap("<leader>p", '"_dP')
-
+-- nnoremap("<leader>p", '"+p', { silenet = true })
 -- Move selected text up/down in visual mode
 vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
 vnoremap("<A-k>", ":m '<-2<CR>gv=gv")

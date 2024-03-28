@@ -9,6 +9,9 @@ return {
 			"nvim-telescope/telescope.nvim", -- optional
 			-- "ibhagwan/fzf-lua",              -- optional
 		},
-		config = true,
+		-- config = true,
+		config = function()
+			require("neogit").setup({ popup = { kind = "floating" }, commit_editor = { kind = "floating" } })
+		end,
 	},
 }
