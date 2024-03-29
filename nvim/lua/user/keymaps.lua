@@ -84,10 +84,10 @@ nnoremap("<leader>'", "<C-^>", { desc = "Switch to last buffer" })
 nnoremap("<leader>w", "<cmd>w<cr>", { silent = false })
 
 -- Quit with leader key
-nnoremap("<leader>q", "<cmd>q<cr>", { silent = false })
+-- nnoremap("<leader>Q", "<cmd>q<cr>", { silent = false })
 
 -- Save and Quit with leader key
-nnoremap("<leader>z", "<cmd>wq<cr>", { silent = false })
+nnoremap("<leader>qq", "<cmd>wq<cr>", { silent = false })
 
 -- Map Oil to <leader>e
 nnoremap("<leader>e", function()
@@ -201,7 +201,7 @@ nnoremap("<leader>cc", ":cclose<cr>zz")
 
 -- Map MaximizerToggle (szw/vim-maximizer) to leader-m
 nnoremap("<leader>m", ":MaximizerToggle<cr>")
-
+nnoremap("<leader>z", ":ZenMode<CR>", { desc = "ZenMode Toggle" })
 -- Resize split windows to be equal size
 nnoremap("<leader>=", "<C-w>=")
 
