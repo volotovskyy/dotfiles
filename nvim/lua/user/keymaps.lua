@@ -341,8 +341,8 @@ nnoremap("<leader>gp", ":Neogit pull<CR>")
 nnoremap("<leader>gP", ":Neogit push<CR>")
 -- nnoremap("<leader>gb", ":Neogit branch<cr>")
 -- nnoremap("<leader>ngb", neogit.open({ "branch" }))
--- nnoremap("<leader>gd", ":DiffviewOpen<cr>")
--- nnoremap("<leader>gdm", ":DiffviewOpen master<cr>")
+nnoremap("<leader>gd", ":DiffviewOpen<cr>")
+nnoremap("<leader>gdm", ":DiffviewOpen master<cr>")
 -- Telescope keybinds --
 nnoremap("<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 nnoremap("<leader>sb", require("telescope.builtin").buffers, { desc = "[S]earch Open [B]uffers" })
@@ -425,6 +425,15 @@ end, { desc = "[O]pen [C]opilot panel" })
 -- nvim-ufo keybinds
 nnoremap("zR", require("ufo").openAllFolds)
 nnoremap("zM", require("ufo").closeAllFolds)
+
+-- Obsidian --
+nnoremap("<leader>oy", ":ObsidianToday -1<CR>", { desc = "date accurate ObsdidianYesterday" })
+nnoremap("<leader>od", ":ObsidianToday<CR>", { desc = "daily ObsdidianToday" })
+nnoremap("<leader>ot", ":ObsidianToday +1<CR>", { desc = "date accurate ObsdidianTomorrow" })
+nnoremap("<leader>obl", ":ObsidianBacklinks<CR>")
+nnoremap("<leader>odl", ":ObsidianDailies<CR>")
+-- oc Toggle check-boxes "obsidian done"
+-- of follow
 
 -- Insert --
 -- Map jj to <esc>
