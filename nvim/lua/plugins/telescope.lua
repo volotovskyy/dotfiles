@@ -22,8 +22,8 @@ return {
 						-- height = 0.5, -- Adjust result height (90% of window height)
 						-- preview_height = 0.5, -- Adjust preview height (60% of result height)
 						-- width = 0.9, -- Adjust window width (90% of window width)
-						prompt_position = "top", -- Place prompt at the top
-						mirror = true, -- Mirror the layout
+						-- prompt_position = "top", -- Place prompt at the top
+						-- mirror = true, -- Mirror the layout
 					},
 					mappings = {
 						-- https://github.com/nvim-telescope/telescope.nvim/issues/2882

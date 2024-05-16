@@ -8,22 +8,24 @@ local js_based_languages = {
 }
 
 return {
+	{ "rcarriga/nvim-dap-ui" },
 	{ "nvim-neotest/nvim-nio" },
 	{
 		"mfussenegger/nvim-dap",
 		config = function()
 			local dap = require("dap")
 
-			local Config = require("lazyvim.config")
+			-- local Config = require("lazyvim.config")
+			-- local Config = require("user.lazy")
 			vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
-			for name, sign in pairs(Config.icons.dap) do
-				sign = type(sign) == "table" and sign or { sign }
-				vim.fn.sign_define(
-					"Dap" .. name,
-					{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
-				)
-			end
+			-- for name, sign in pairs(Config.icons.dap) do
+			-- 	sign = type(sign) == "table" and sign or { sign }
+			-- 	vim.fn.sign_define(
+			-- 		"Dap" .. name,
+			-- 		{ text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
+			-- 	)
+			-- end
 
 			for _, language in ipairs(js_based_languages) do
 				dap.configurations[language] = {
@@ -81,6 +83,20 @@ return {
 		end,
 		keys = {
 			{
+				"<leader>db",
+				function()
+					require("dap").toggle_breakpoint()
+				end,
+				desc = "Toggle breakpoint",
+			},
+			{
+				"<leader>dB",
+				function()
+					require("dap").set_breakpoint()
+				end,
+				desc = "Set breakpoint",
+			},
+			{
 				"<leader>dO",
 				function()
 					require("dap").step_out()
@@ -97,14 +113,14 @@ return {
 			{
 				"<leader>da",
 				function()
-					if vim.fn.filereadable(".vscode/launch.json") then
-						local dap_vscode = require("dap.ext.vscode")
-						dap_vscode.load_launchjs(nil, {
-							["pwa-node"] = js_based_languages,
-							["chrome"] = js_based_languages,
-							["pwa-chrome"] = js_based_languages,
-						})
-					end
+					-- if vim.fn.filereadable(".vscode/launch.json") then
+					-- 	local dap_vscode = require("dap.ext.vscode")
+					-- 	dap_vscode.load_launchjs(nil, {
+					-- 		["pwa-node"] = js_based_languages,
+					-- 		["chrome"] = js_based_languages,
+					-- 		["pwa-chrome"] = js_based_languages,
+					-- 	})
+					-- end
 					require("dap").continue()
 				end,
 				desc = "Run with Args",

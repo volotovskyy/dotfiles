@@ -70,28 +70,9 @@ return {
 			-- LSP servers to install (see list here: https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers )
 			local servers = {
 				bashls = {},
-				-- clangd = {},
-				cssls = {},
-				gleam = {},
-				graphql = {},
 				html = {},
-				jsonls = {},
-				lua_ls = {
-					settings = {
-						Lua = {
-							workspace = { checkThirdParty = false },
-							telemetry = { enabled = false },
-						},
-					},
-				},
-				marksman = {},
-				-- nil_ls = {},
-				-- ocamllsp = {},
-				prismals = {},
-				pyright = {},
-				solidity = {},
-				sqlls = {},
-				clojure_lsp = {},
+				cssls = {},
+				svelte = {},
 				tailwindcss = {
 					-- filetypes = { "reason" },
 				},
@@ -108,7 +89,27 @@ return {
 						),
 					},
 				},
+				jsonls = {},
 				yamlls = {},
+				lua_ls = {
+					settings = {
+						Lua = {
+							workspace = { checkThirdParty = false },
+							telemetry = { enabled = false },
+						},
+					},
+				},
+				pyright = {},
+				clojure_lsp = {},
+				marksman = {},
+				-- graphql = {},
+				-- prismals = {},
+				-- solidity = {},
+				-- sqlls = {},
+				-- nil_ls = {},
+				-- ocamllsp = {},
+				-- clangd = {},
+				-- gleam = {},
 			}
 
 			-- Default handlers for LSP

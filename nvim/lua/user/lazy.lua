@@ -24,3 +24,8 @@ lazy.setup({
 		notify = false,
 	},
 })
+
+-- return lazy if other configurations need it
+return {
+	lazy = lazy,
+}

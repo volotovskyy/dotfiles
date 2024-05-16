@@ -27,7 +27,10 @@ return {
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 			-- Load snippets
+			-- require("luasnip.loaders.from_vscode").load({ paths = { "./snippets" } })
 			require("luasnip.loaders.from_vscode").lazy_load()
+			-- load snippets from path/of/your/nvim/config/my-cool-snippets
+			-- require("luasnip.loaders.from_snipmate").lazy_load()
 
 			cmp.setup({
 				snippet = {

@@ -374,10 +374,23 @@ nnoremap("<leader>u", "<cmd>Telescope undo<cr>")
 
 -- LSP Keybinds (exports a function to be used in ../../after/plugin/lsp.lua b/c we need a reference to the current buffer) --
 M.map_lsp_keybinds = function(buffer_number)
+	nnoremap("gd", ":Lspsaga goto_definition<cr>", { desc = "LSPsaga: go to definition", buffer = buffer_number })
+	nnoremap(
+		"gtd",
+		":Lspsaga goto_type_definition",
+		{ desc = "LSPsaga: go to type definition<cr>", buffer = buffer_number }
+	)
+
+	nnoremap("pd", ":Lspsaga peek_definition<cr>", { desc = "LSPsaga: peek definition" })
+	nnoremap("ptd", ":Lspsaga peek_type_definition<cr>", { desc = "LSPsaga: peek type definition" })
+
+	nnoremap("<leader>T", ":Lspsaga term_toggle<cr>")
+
 	nnoremap("<leader>rn", vim.lsp.buf.rename, { desc = "LSP: [R]e[n]ame", buffer = buffer_number })
 	nnoremap("<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: [C]ode [A]ction", buffer = buffer_number })
 
-	nnoremap("gd", vim.lsp.buf.definition, { desc = "LSP: [G]oto [D]efinition", buffer = buffer_number })
+	-- vanila LSP --
+	-- nnoremap("gd", vim.lsp.buf.definition, { desc = "LSP: [G]oto [D]efinition", buffer = buffer_number })
 
 	-- Telescope LSP keybinds --
 	nnoremap(
