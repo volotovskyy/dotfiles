@@ -99,6 +99,7 @@ return {
 						},
 					},
 				},
+				-- stylua = {},
 				pyright = {},
 				clojure_lsp = {},
 				marksman = {},

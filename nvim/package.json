@@ -7,13 +7,6 @@
     "snippets": [
       {
         "language": [
-          "gitcommit",
-          "NeogitCommitMessage"
-        ],
-        "path": "snippets/gitcommit.json"
-      },
-      {
-        "language": [
           "svelte"
         ],
         "path": "snippets/svelte.json"

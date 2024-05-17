@@ -201,7 +201,7 @@ nnoremap("<leader>cc", ":cclose<cr>zz")
 
 -- Map MaximizerToggle (szw/vim-maximizer) to leader-m
 nnoremap("<leader>m", ":MaximizerToggle<cr>")
-nnoremap("<leader>z", ":ZenMode<CR>", { desc = "ZenMode Toggle" })
+nnoremap("<leader>Z", ":ZenMode<CR>", { desc = "ZenMode Toggle" })
 -- Resize split windows to be equal size
 nnoremap("<leader>=", "<C-w>=")
 
