@@ -386,6 +386,9 @@ M.map_lsp_keybinds = function(buffer_number)
 
 	nnoremap("<leader>T", ":Lspsaga term_toggle<cr>")
 
+	nnoremap("<leader>lo", ":Lspsaga outline<cr>", { desc = "LSPsaga: outline", buffer = buffer_number })
+	nnoremap("<leader>lf", ":Lspsaga finder<cr>", { desc = "LSPsaga: finder", buffer = buffer_number })
+
 	nnoremap("<leader>rn", vim.lsp.buf.rename, { desc = "LSP: [R]e[n]ame", buffer = buffer_number })
 	nnoremap("<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: [C]ode [A]ction", buffer = buffer_number })
 
