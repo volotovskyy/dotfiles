@@ -38,12 +38,18 @@ return {
 			require("neogit").setup({
 				kind = "floating",
 				popup = { kind = "floating" }, -- split
-				commit_editor = { kind = "floating" }, -- auto
+				-- commit = { kind = "floating" },
+				commit_editor = {
+					kind = "floating",
+					show_staged_diff = false, -- true
+					-- staged_diff_split_kind = "split",
+				}, -- auto
 				commit_select_view = {
 					kind = "floating", -- tab
 				},
 				commit_view = {
 					kind = "floating", -- vsplit
+					--  verify_commit = vim.fn.executable("gpg") == 1
 					verify_commit = os.execute("which gpg") == 0, -- Can be set to true or false, otherwise we try to find the binary
 				},
 				preview_buffer = {
@@ -54,6 +60,18 @@ return {
 				},
 				reflog_view = {
 					kind = "floating", -- split
+				},
+				rebase_editor = {
+					kind = "floating", -- auto
+				},
+				merge_editor = {
+					kind = "floating", -- auto
+				},
+				tag_editor = {
+					kind = "floating", -- auto
+				},
+				description_editor = {
+					kind = "floating", -- auto
 				},
 			})
 		end,

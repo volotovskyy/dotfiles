@@ -13,6 +13,10 @@ local neogit = require("neogit")
 harpoon:setup()
 -- REQUIRED
 
+local substitute = require("substitute")
+
+substitute.setup()
+
 local utils = require("user.utils")
 
 local M = {}
@@ -109,23 +113,28 @@ nnoremap("%", "%zz")
 nnoremap("*", "*zz")
 nnoremap("#", "#zz")
 
--- Press 'S' for quick find/replace for the word under the cursor
-nnoremap("S", function()
-	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
-	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
-	vim.api.nvim_feedkeys(keys, "n", false)
-end)
-
--- Open Spectre for global find/replace
-nnoremap("<leader>S", function()
-	require("spectre").toggle()
-end)
-
--- Open Spectre for global find/replace for the word under the cursor in normal mode
+-- -- Press 'S' for quick find/replace for the word under the cursor
+-- nnoremap("S", function()
+-- 	local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
+-- 	local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
+-- 	vim.api.nvim_feedkeys(keys, "n", false)
+-- end)
+--
+-- -- Open Spectre for global find/replace
+-- nnoremap("<leader>S", function()
+-- 	require("spectre").toggle()
+-- end)
+--
+-- -- Open Spectre for global find/replace for the word under the cursor in normal mode
 -- TODO Fix, currently being overriden by Telescope
 nnoremap("<leader>sw", function()
 	require("spectre").open_visual({ select_word = true })
 end, { desc = "Search current word" })
+
+nnoremap("s", substitute.operator, { desc = "Substitute with motion" })
+nnoremap("ss", substitute.line, { desc = "Substitute line" })
+nnoremap("S", substitute.eol, { desc = "Substitute to end of line" })
+xnoremap("s", substitute.visual, { desc = "Substitute in visual mode" })
 
 -- Press 'H', 'L' to jump to start/end of a line (first/last char)
 nnoremap("L", "$")
